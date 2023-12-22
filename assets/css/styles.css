@@ -236,6 +236,7 @@ svg {
   left: 0;
 }
 
+
 /* Add blur to header */
 .blur-header{
   background-color: transparent;
@@ -253,7 +254,9 @@ svg {
   z-index: -1;
 }
 /* Active link */
-
+.active-link{
+  color: var(--first-color);
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -477,7 +480,8 @@ svg {
 .contact_container{
   padding-top: 1rem;
 }
-.contact_form,.contact_group{
+.contact_form,
+.contact_group{
   display: grid;
   row-gap: 1rem;
 }
@@ -488,7 +492,7 @@ svg {
 
 .content_input{
   padding: 1rem 1.25rem;
-  border-radius: 5rem;
+  border-radius: 2rem;
   background-color: var(--body-color);
   color: var(--title-color);
 }
@@ -507,9 +511,7 @@ svg {
 }
 
 .contact_message{
-  position: absolute;
-  left: 0;
-  bottom: 4.5rem;
+  
   font-size: var(--small-font-size);
   color: var(--title-color);
 }
