@@ -601,9 +601,168 @@ svg {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px) {
+  .container{
+    margin-inline: 1rem;
+  }
 
+  .skill_content{
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 576px) {
+  .home_container,
+  .about_container,
+  .skills_container,
+  .projects_container,
+  .contact_container{
+    grid-template-columns: 360px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home_container,
+  .about_container,
+  .skills_container{
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+  }
 
 
+  .home__blob,.about_blob{
+    width: 400px;
+  }
+  .about_data{
+    order: 1;
+  }
+  .projects_container{
+    grid-template-columns: repeat(2,352px);
+  } 
+}
 /* For large devices */
+@media screen and (min-width: 1023px){
+  .section{
+    padding-block: 7rem 2rem;
+  }
+  .section__subtitle{
+    font-size: var(--normal-font-size);
+  }
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__close,.nav__toggle{
+    display: none;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  .nav__menu{
+    width: initial;
+  }
+  .blur-header::after{
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+}
+@media screen and (min-width: 1152px) {
+  .container{
+    margin-inline: auto;
+  }
+  .home_container{
+    grid-template-columns: 455px 550px;
+    column-gap: 7rem;
+    padding-bottom: 2rem 3rem;
+  }
+  .home__blob{
+    width: 550px;
+  }
+  .home_content{
+    row-gap: 4.5rem;
+  }
+  .home_description{
+    margin-block: 1.5rem;
+  }
+  .home_social{
+    column-gap: 1.5rem;
+  }
+  .about_container{
+    grid-template-columns: 550px 460px;
+    column-gap: 4.5rem;
+    padding-bottom: 1rem;
+
+  }
+  .about_blob{
+    width: 550px;
+  }
+  .about_description{
+    margin-bottom: 3rem;
+  }
+  .skills_container{
+    grid-template-rows: 340px;
+    column-gap: 10rem;
+    padding-bottom: 4rem;
+  }
+  .skills_description{
+    margin-bottom: 3rem;
+  }
+  .skill_content{
+    column-gap: 8rem;
+  }
+  .skill_group{
+    row-gap: 1.5rem;
+  }
+  .skill_item{
+    font-size: var(--h3-font-size);
+  }
+  .projects_container{
+    grid-template-columns: repeat(3,350px);
+    column-gap: 3rem;
+    padding-block: 2.5rem 4rem;
+  }
+  .project_button{
+    font-size: var(--normal-font-size);
+  }
+  .contact_container{
+    grid-template-columns: 680px;
+    padding-block: 2.5rem 2rem;
+  }
+  .contact_form{
+    row-gap: 1.5rem;
+  }
+  .contact_group{
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1.5rem;
+  }
+  .content_input{
+    padding: 1.5rem;
+  }
+  .contact_form textarea{
+    height: 20rem;
+  }
+  .footer{
+    padding-bottom: 4.5rem 4rem;
+  }
+  .footer_container{
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .footer_title{
+    font-size: var(--bigger-font-size);
+  }
+  .footer_social{
+    column-gap: 1.5rem;
+  }
+  .footer_copy{
+    margin: 0;
+    justify-self: flex-end;
+  }
+  .scrollup{
+    right: 3rem;
+  }
+
+}
