@@ -32,6 +32,7 @@
   --body-font: "Poppins", sans-serif;
   --biggest-font-size: 2rem;
   --bigger-font-size: 1.25rem;
+  --big-font-size: .9rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -54,6 +55,7 @@
   :root {
     --biggest-font-size: 4rem;
     --bigger-font-size: 2rem;
+    --big-font-size: 1.5rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -176,6 +178,7 @@ svg {
 .nav__logo{
   color: var(--title-color);
   font-weight: var(--font-medium);
+  font-size: var(--big-font-size);
 }
 
 .nav__logo span{
@@ -369,7 +372,7 @@ svg {
 }
 .about_img{
   width: 900px;
-  transform: translateX(-120px);
+  transform: translateX(-106px);
 }
 /*=============== SKILLS ===============*/
 .skills{
@@ -394,7 +397,7 @@ svg {
 }
 
 .skill_content{
-  grid-template-columns: repeat(2,max-content);
+  grid-template-columns: repeat(2,7rem);
   column-gap: 4rem;
   justify-content: center;
   align-items: baseline;
@@ -623,11 +626,12 @@ svg {
     justify-content: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
   .home_container,
   .about_container,
   .skills_container{
     grid-template-columns: repeat(2,1fr);
+    column-gap: 3rem;
     align-items: center;
   }
 
@@ -641,6 +645,32 @@ svg {
   .projects_container{
     grid-template-columns: repeat(2,352px);
   } 
+
+  .contact_container{
+    grid-template-columns: 480px;
+  }
+  .skill_content{
+    grid-template-columns: repeat(2,13rem);
+  }
+  .footer_container{
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .footer{
+    padding-bottom: 4.5rem 4rem;
+  }
+  
+  .footer_title{
+    font-size: var(--bigger-font-size);
+  }
+  .footer_social{
+    column-gap: 1.5rem;
+  }
+  .footer_copy{
+    margin: 0;
+    justify-self: flex-end;
+  }
 }
 /* For large devices */
 @media screen and (min-width: 1023px){
@@ -666,6 +696,9 @@ svg {
   .blur-header::after{
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
+  }
+  .skill_content{
+    grid-template-columns: repeat(2,16rem);
   }
 }
 @media screen and (min-width: 1152px) {
@@ -743,24 +776,7 @@ svg {
   .contact_form textarea{
     height: 20rem;
   }
-  .footer{
-    padding-bottom: 4.5rem 4rem;
-  }
-  .footer_container{
-    grid-template-columns: repeat(3,1fr);
-    align-items: center;
-    text-align: initial;
-  }
-  .footer_title{
-    font-size: var(--bigger-font-size);
-  }
-  .footer_social{
-    column-gap: 1.5rem;
-  }
-  .footer_copy{
-    margin: 0;
-    justify-self: flex-end;
-  }
+  
   .scrollup{
     right: 3rem;
   }
