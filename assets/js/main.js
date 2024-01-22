@@ -46,14 +46,16 @@ const sendEmail = (e)=>{
     var name = document.forms["contact-form"]["user_name"].value;
     var email = document.forms["contact-form"]["user_email"].value;
     var content = document.forms["contact-form"]["user_project"].value;
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var validRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     // Basic spam checking (you can enhance this according to your needs)
-    if (validRegex.text(email)||name.includes("http://") || email.includes("http://") || name.length > 100 || content.length > 500) {
+    if (!validRegex.test(email) || name.includes("http://") || email.includes("http://") || name.length <= 4 || content.length < 50) {
         content_message.textContent ="Potential spam detected. Please enter valid data.";
         setTimeout(()=>{
             content_message.textContent = ''
         },5000)
         content_Form.reset()
+        return;
     }
     emailjs.sendForm('service_f84gpb7', 'template_rj83rbs', '#contact-form','5LOaCugdX_NzN06Xi')
                     .then(function() {
